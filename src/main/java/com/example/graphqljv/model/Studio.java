@@ -11,11 +11,7 @@ public class Studio {
     Long id;
     String name;
     @ManyToMany
-    @JoinTable(
-            name = "game_studio",
-            joinColumns = @JoinColumn(name = "studio_id"),
-            inverseJoinColumns = @JoinColumn(name = "game_id")
-    )
+    @JoinTable(name = "game_studio", joinColumns = @JoinColumn(name = "studio_id"), inverseJoinColumns = @JoinColumn(name = "game_id"))
     List<Game> games;
 
     public Long getId() {

@@ -14,28 +14,20 @@ public class Game {
     List<String> genres;
     int publicationDate;
     @ManyToMany
-            @JoinTable(
-                    name = "game_editor",
-                    joinColumns = @JoinColumn(name = "game_id"),
-                    inverseJoinColumns = @JoinColumn(name = "editor_id")
-            )
+    @JoinTable(name = "game_editor", joinColumns = @JoinColumn(name = "game_id"), inverseJoinColumns = @JoinColumn(name = "editor_id"))
     List<Editor> editors;
     @ManyToMany
-            @JoinTable(
-                    name = "game_studio",
-                    joinColumns = @JoinColumn(name = "game_id"),
-                    inverseJoinColumns = @JoinColumn(name = "studio_id")
-            )
+    @JoinTable(name = "game_studio", joinColumns = @JoinColumn(name = "game_id"), inverseJoinColumns = @JoinColumn(name = "studio_id"))
     List<Studio> studios;
     @ElementCollection
     List<String> platforms;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -46,11 +38,11 @@ public class Game {
         this.name = name;
     }
 
-    public List<String> getGenre() {
+    public List<String> getGenres() {
         return genres;
     }
 
-    public void setGenre(List<String> genres) {
+    public void setGenres(List<String> genres) {
         this.genres = genres;
     }
 
@@ -78,11 +70,11 @@ public class Game {
         this.studios = studios;
     }
 
-    public List<String> getPlatform() {
+    public List<String> getPlatforms() {
         return platforms;
     }
 
-    public void setPlatform(List<String> platform) {
+    public void setPlatforms(List<String> platform) {
         this.platforms = platform;
     }
 }

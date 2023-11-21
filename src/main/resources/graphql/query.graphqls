@@ -22,6 +22,49 @@ type Query {
     ): Editor
 }
 
+type Mutation {
+    addGame (
+        name: String!
+        genres: [String!]!
+        publicationDate: Int
+        editors: [ID!]!
+        studios: [ID!]!
+        platforms: [String!]!
+    ): Game
+    addStudio (
+        name: String!
+    ): Studio
+    addEditor (
+        name: String!
+    ): Editor
+    updateGame (
+        id: ID!
+        name: String
+        genres: [String!]
+        publicationDate: Int
+        editors: [ID!]
+        studios: [ID!]
+        platforms: [String!]
+    ): Game
+    updateStudio (
+        id: ID!
+        name: String
+    ): Studio
+    updateEditor (
+        id: ID!
+        name: String
+    ): Editor
+    deleteGame (
+        id: ID!
+    ): Game
+    deleteStudio (
+        id: ID!
+    ): Studio
+    deleteEditor (
+        id: ID!
+    ): Editor
+}
+
 type Editors {
     infos: Infos
     results: [Editor]

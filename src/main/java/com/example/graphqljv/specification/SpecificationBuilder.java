@@ -11,7 +11,7 @@ public class SpecificationBuilder {
 
     public static Specification<Game> filterByGenreAndByPlatformAndByStudio(String genre, String platform, String studio) {
         return (root, query, criteriaBuilder) -> {
-            
+
             Predicate predicate = criteriaBuilder.isTrue(criteriaBuilder.literal(true));
 
             if (genre != null) {

@@ -11,11 +11,7 @@ public class Editor {
     Long id;
     String name;
     @ManyToMany
-    @JoinTable(
-            name = "game_editor",
-            joinColumns = @JoinColumn(name = "editor_id"),
-            inverseJoinColumns = @JoinColumn(name = "game_id")
-    )
+    @JoinTable(name = "game_editor", joinColumns = @JoinColumn(name = "editor_id"), inverseJoinColumns = @JoinColumn(name = "game_id"))
     List<Game> games;
 
     public Long getId() {
